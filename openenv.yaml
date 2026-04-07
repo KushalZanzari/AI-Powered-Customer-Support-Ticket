@@ -1,0 +1,79 @@
+spec_version: 1
+name: customer_support_env
+description: >
+  An AI-powered customer support ticket resolution environment where agents
+  learn to handle realistic support tickets end-to-end.
+type: space
+runtime: fastapi
+app: server.app:app
+port: 8000
+
+tasks:
+  - name: easy
+    description: Basic FAQ resolution.
+    difficulty: easy
+    grader: graders.grade_easy
+
+  - name: medium
+    description: Multi-step issue handling.
+    difficulty: medium
+    grader: graders.grade_medium
+
+  - name: hard
+    description: Complex escalation cases.
+    difficulty: hard
+    grader: graders.grade_hard
+
+action_space:
+  type: object
+  model: models.SupportAction
+  fields:
+    action_type:
+      type: string
+      enum: [classify_issue, reply, escalate, resolve, request_more_info]
+      description: The type of action to take
+    category:
+      type: string
+      enum: [billing, technical, account, general]
+      optional: true
+    message:
+      type: string
+      optional: true
+    team:
+      type: string
+      enum: [billing_team, technical_team, management, security_team]
+      optional: true
+
+observation_space:
+  type: object
+  model: models.SupportObservation
+  fields:
+    ticket_id:
+      type: string
+    ticket_text:
+      type: string
+    customer_name:
+      type: string
+    customer_priority:
+      type: string
+    customer_history:
+      type: array
+    conversation_history:
+      type: array
+    ticket_status:
+      type: string
+    goal:
+      type: string
+    current_task:
+      type: string
+    done:
+      type: boolean
+    reward:
+      type: float
+    metadata:
+      type: object
+
+reward_space:
+  type: object
+  model: models.SupportReward
+  range: [0.0, 1.0]
