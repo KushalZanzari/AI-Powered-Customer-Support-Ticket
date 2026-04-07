@@ -13,7 +13,7 @@ tags:
 > An OpenEnv-compatible simulation environment where AI agents learn to handle customer support tickets end-to-end — from reading queries, classifying issues, responding to customers, and escalating when needed.
 [![OpenEnv](https://img.shields.io/badge/OpenEnv-compatible-blue)](https://github.com/meta-pytorch/OpenEnv)
 [![Python](https://img.shields.io/badge/python-3.10+-green)](https://python.org)
-[![Hugging Face](https://img.shields.io/badge/🤗_Live_on-Hugging_Face-blue)](https://huggingface.co/spaces/kushalzanzari/ai-customer-support)
+[![Hugging Face](https://img.shields.io/badge/🤗_Live_on-Hugging_Face-blue)](https://kushalzanzari-ai-customer-support.hf.space/docs)
 
 
 ---
