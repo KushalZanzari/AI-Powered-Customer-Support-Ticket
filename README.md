@@ -1,13 +1,4 @@
----
-title: AI Customer Support
-emoji: 🎧
-colorFrom: blue
-colorTo: green
-sdk: docker
-app_port: 8000
-tags:
-  - openenv
----
+
 # 🎧 AI-Powered Customer Support Ticket Resolution Environment
 
 > An OpenEnv-compatible simulation environment where AI agents learn to handle customer support tickets end-to-end — from reading queries, classifying issues, responding to customers, and escalating when needed.
@@ -356,6 +347,16 @@ Each task has a deterministic grader returning a score from **0.0 to 1.0**:
 ├── README.md                    # This file
 └── .gitignore
 ```
+---
+title: AI Customer Support
+emoji: 🎧
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 8000
+tags:
+  - openenv
+---
 
 
 
