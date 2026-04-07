@@ -8,7 +8,6 @@ WORKDIR /app
 # Install dependencies first (layer caching)
 COPY env/server/requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt && rm /tmp/requirements.txt
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # Copy application code
 COPY env/ /app/env/
